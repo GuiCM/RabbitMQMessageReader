@@ -5,12 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RabbitMQMessageReader"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing">
+        Title="MainWindow" MinHeight="450" Height="450" MinWidth="800" Width="800" Closing="Window_Closing">
     <Grid>
-        <Button Content="Conect" HorizontalAlignment="Left" Margin="56,98,0,0" VerticalAlignment="Top" Width="117" Click="Button_Click"/>
-        <Button Content="Publish" HorizontalAlignment="Left" Margin="56,136,0,0" VerticalAlignment="Top" Width="117" Click="Button_Click_2"/>
-        <Button Content="Consume" HorizontalAlignment="Left" Margin="56,176,0,0" VerticalAlignment="Top" Width="117" Click="Button_Click_1"/>
-        <Button Content="Cancel Consumer" HorizontalAlignment="Left" Margin="56,217,0,0" VerticalAlignment="Top" Width="117" Click="Button_Click_3"/>
+        <Button Content="Conectar" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="117" Click="BtnConnect_Click" Height="30" />
+        <Button Content="Publicar mensagens de teste" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="180" Click="BtnPublishTestMessage_Click" Height="30" Margin="0,0,10,10" />
+        <Button Content="Ler Mensagens" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Height="30" Width="117" Click="BtnReadMessages_Click" />
+        <Button Content="Button" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Height="30" Width="117" Click="BtnCancelConsumer_Click" />
+
+        <TextBlock HorizontalAlignment="Left" Margin="11,26,0,0" TextWrapping="Wrap" Text="Host:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="8,48,0,0" TextWrapping="Wrap" Text="Porta:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="377,26,0,0" TextWrapping="Wrap" Text="Usuário:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="385,48,0,0" TextWrapping="Wrap" Text="Senha:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtBlockConnectionLog" HorizontalAlignment="Left" Margin="132,87,0,0" MinWidth="200" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="txtBoxHost" HorizontalAlignment="Left" Margin="43,24,0,0" TextWrapping="Wrap" Text="localhost" VerticalAlignment="Top" Width="300"/>
+        <TextBox x:Name="txtBoxPort" HorizontalAlignment="Left" Margin="43,47,0,0" TextWrapping="Wrap" Text="5673" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="txtBoxUser" HorizontalAlignment="Left" Margin="425,24,0,0" TextWrapping="Wrap" Text="guest" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtBoxPassword" HorizontalAlignment="Left" Margin="425,47,0,0" TextWrapping="Wrap" Text="guest" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

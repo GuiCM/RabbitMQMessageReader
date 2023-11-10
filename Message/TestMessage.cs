@@ -1,4 +1,4 @@
-﻿namespace RabbitMQMessageReader
+﻿namespace RabbitMQMessageReader.Message
 {
     public class TestMessage
     {

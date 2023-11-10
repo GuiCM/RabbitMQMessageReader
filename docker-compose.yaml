@@ -1,0 +1,25 @@
+version: "3.2"
+
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - 5673:5672
+      - 8081:15672
+    volumes:
+      - "~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/"
+    healthcheck:
+      test: [ "CMD", "nc", "-z", "localhost", "15672" ]
+      interval: 5s
+      timeout: 15s
+      retries: 10
+    networks:
+        - rabbitmq-network
+
+networks:
+  rabbitmq-network:
+    driver: bridge
